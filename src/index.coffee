@@ -1,2 +1,1 @@
-
-module.exports = require "./clone-org"
+require "./clone-org"

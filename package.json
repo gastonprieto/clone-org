@@ -12,6 +12,10 @@
     "url": "git+https://github.com/Parsimotion/clone-org.git"
   },
   "dependencies": {
+    "bluebird": "^3.4.1",
+    "github": "^9.1.0",
+    "lodash": "^4.17.4",
+    "pages-to-stream": "^1.0.3"
   },
   "devDependencies": {
     "bluebird": "3.4.1",
@@ -21,7 +25,6 @@
     "grunt-contrib-clean": "1.0.0",
     "grunt-contrib-coffee": "1.0.0",
     "grunt-mocha-test": "0.13.2",
-    "lodash": "4.15.0",
     "mocha": "3.0.2",
     "should": "11.1.0"
   },
