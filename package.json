@@ -2,7 +2,9 @@
   "name": "clone-org",
   "version": "0.0.0",
   "description": "clone-org",
-  "main": "index.js",
+  "bin": {
+    "cloneorg": "bin/index.js"
+  },
   "scripts": {
     "test": "grunt test",
     "prepublish": "grunt build"
