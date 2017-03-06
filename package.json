@@ -14,6 +14,7 @@
   "dependencies": {
     "bluebird": "^3.4.1",
     "github": "^9.1.0",
+    "inquirer": "^3.0.6",
     "lodash": "^4.17.4",
     "pages-to-stream": "^1.0.3"
   },
