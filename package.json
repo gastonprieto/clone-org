@@ -13,6 +13,7 @@
   },
   "dependencies": {
     "bluebird": "^3.4.1",
+    "gitclone": "^2.0.0",
     "github": "^9.1.0",
     "inquirer": "^3.0.6",
     "lodash": "^4.17.4",
