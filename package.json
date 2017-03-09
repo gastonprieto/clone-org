@@ -15,11 +15,13 @@
   },
   "dependencies": {
     "bluebird": "^3.4.1",
+    "commander": "^2.9.0",
     "gitclone": "^2.0.0",
     "github": "^9.1.0",
     "inquirer": "^3.0.6",
     "lodash": "^4.17.4",
-    "pages-to-stream": "^1.0.3"
+    "pages-to-stream": "^1.0.3",
+    "path-exists": "^3.0.0"
   },
   "devDependencies": {
     "bluebird": "3.4.1",
