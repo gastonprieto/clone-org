@@ -59,7 +59,7 @@ readCredentials()
   .stream()
   .map fp.property "name"
   .filter (name) -> exist(organization, name).then (exists) -> not exists
-  .flatMapWithMaxConcurrent 1, (name) ->
+  .flatMapWithMaxConcurrent 10, (name) ->
     Rx.Observable.defer ->
       cloneRepository organization, name
   .toPromise()
