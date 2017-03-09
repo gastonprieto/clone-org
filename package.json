@@ -34,10 +34,10 @@
     "mocha": "3.0.2",
     "should": "11.1.0"
   },
-  "author": "Parsimotion",
+  "author": "Gaston Prieto",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/Parsimotion/clone-org/issues"
+    "url": "https://github.com/gastonprieto/clone-org/issues"
   },
-  "homepage": "https://github.com/Parsimotion/clone-org#readme"
+  "homepage": "https://github.com/gastonprieto/clone-org#readme"
 }
