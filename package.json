@@ -21,7 +21,8 @@
     "inquirer": "^3.0.6",
     "lodash": "^4.17.4",
     "pages-to-stream": "^1.0.3",
-    "path-exists": "^3.0.0"
+    "path-exists": "^3.0.0",
+    "rx": "^4.1.0"
   },
   "devDependencies": {
     "bluebird": "3.4.1",
