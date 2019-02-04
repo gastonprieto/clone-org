@@ -1,13 +1,15 @@
 _ = require "lodash"
 fp = require "lodash/fp"
-Rx = require "rx"
 Promise = require "bluebird"
-PagesToStream = require "pages-to-stream"
+highland = require "highland"
+HighlandPagination = require "highland-pagination"
 GitHubClient = require "github"
 inquirer = require "inquirer"
 program = require "commander"
 gitclone = Promise.promisify require "gitclone"
 pathExists = require "path-exists"
+
+require "highland-concurrent-flatmap"
 
 getRepositories = _.curry (client, organization, lastResponse) ->
   $promise = if lastResponse? then client.getNextPage lastResponse else client.repos.getForOrg { org: organization }
@@ -55,13 +57,12 @@ return program.help() unless organization?
 readCredentials()
 .then (credentials) ->
   client = createClient credentials
-  new PagesToStream getRepositories(client, organization)
+  new HighlandPagination getRepositories(client, organization)
   .stream()
   .map fp.property "name"
   .filter (name) -> exist(organization, name).then (exists) -> not exists
-  .flatMapWithMaxConcurrent 10, (name) ->
-    Rx.Observable.defer ->
-      cloneRepository organization, name
+  .concurrentFlatMap 10, (name) -> highland cloneRepository organization, name
+  .reduce 0, (accum) -> accum + 1
   .toPromise()
-.then -> console.log "done"
-.catch console.log
+.then (amountImported) -> console.log "done, imported #{ amountImported } repositories"
+.catch (err) -> console.error "An error has ocurred", err
