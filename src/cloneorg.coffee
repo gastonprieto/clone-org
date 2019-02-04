@@ -63,6 +63,6 @@ readCredentials()
   .filter (name) -> exist(organization, name).then (exists) -> not exists
   .concurrentFlatMap 10, (name) -> highland cloneRepository organization, name
   .reduce 0, (accum) -> accum + 1
-  .toPromise()
+  .toPromise Promise
 .then (amountImported) -> console.log "done, imported #{ amountImported } repositories"
 .catch (err) -> console.error "An error has ocurred", err
