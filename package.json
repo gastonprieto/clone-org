@@ -14,10 +14,11 @@
     "url": "git+https://github.com/gastonprieto/clone-org.git"
   },
   "dependencies": {
+    "@octokit/auth-basic": "^1.4.2",
+    "@octokit/rest": "^17.3.0",
     "bluebird": "^3.4.1",
     "commander": "^2.9.0",
-    "gitclone": "^2.0.0",
-    "github": "^9.1.0",
+    "git-clone": "^0.1.0",
     "highland": "^2.13.0",
     "highland-concurrent-flatmap": "^1.0.0",
     "highland-pagination": "^0.1.2",
